@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="SignInButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>725</x>
+      <y>600</y>
+      <width>150</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Sign In</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Title">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>180</y>
+      <width>850</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>72</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>School Grading App</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="studentRadio">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>420</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Student</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="teacherRadio">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>420</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Teacher</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="usernameBox">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>500</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="usernameLabel">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>480</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="passwordBox">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>580</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="passwordLabel">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>560</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSchool_Grading_App">
+    <property name="title">
+     <string>School Grading App</string>
+    </property>
+   </widget>
+   <addaction name="menuSchool_Grading_App"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

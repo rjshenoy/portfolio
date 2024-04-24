@@ -1,0 +1,11 @@
+release/board.o
+release/boardtile.o
+release/main.o
+release/mainwindow.o
+release/piece.o
+release/playernamedialog.o
+release/moc_board.o
+release/moc_boardtile.o
+release/moc_mainwindow.o
+release/moc_piece.o
+release/moc_playernamedialog.o
