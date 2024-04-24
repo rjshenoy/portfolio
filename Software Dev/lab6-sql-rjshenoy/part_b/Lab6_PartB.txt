@@ -1,0 +1,37 @@
+Lab #6 Take Home
+Your name:
+
+
+---------------------------------------- Question 1 Query ---------------------------------------- 
+
+								CREATE VIEW max_orders AS SELECT ship_city, COUNT(*) AS max_count FROM orders GROUP BY ship_city;
+
+SELECT ship_city FROM max_orders WHERE max_count = (SELECT MAX(max_count) FROM max_orders);
+
+---------------------------------------- Question 2 Query ---------------------------------------- 
+
+										CREATE VIEW product_counter_final AS SELECT order_details.order_id, COUNT(order_details.product_id) FROM orders INNER JOIN order_details ON orders.order_id = order_details.order_id WHERE ship_city = 'Graz' GROUP BY order_detai
+ls.order_id;
+
+CREATE VIEW min_count_product_counter AS SELECT * FROM product_counter_final WHERE count = (SELECT MIN(count) FROM product_counter_final);
+
+SELECT product_name FROM min_count_product_counter INNER JOIN order_details od ON min_count_product_counter.order_id = od.order_id INNER JOIN products ON od.product_id = products.product_id;
+         product_name
+
+---------------------------------------- Question 3 Query ---------------------------------------- 
+
+										CREATE VIEW company_name_and_order_ids AS SELECT company_name, COUNT(order_id) FROM customers INNER JOIN orders ON customers.customer_id = orders.customer_id GROUP BY company_name;
+
+SELECT (company_name) FROM company_name_and_order_ids WHERE count > (SELECT AVG(count) FROM company_name_and_order_ids);
+         company_name
+
+
+---------------------------------------- Question 4 Query ---------------------------------------- 
+
+										SELECT C.CATEGORY_ID, COUNT(*) FROM CATEGORIES C, PRODUCTS P WHERE C.CATEGORY_ID = P.CATEGORY_ID GROUP BY C.CATEGORY_ID HAVING COUNT(*) > 10;
+
+---------------------------------------- Question 5 Query ---------------------------------------- 
+
+										SELECT * FROM (SELECT PRODUCT_NAME, MAX(QTY) MQTY FROM (SELECT P.PRODUCT_NAME, SUM(QUANTITY) QTY FROM PRODUCTS P INNER JOIN order_details o ON P.PRODUCT_ID = O.PRODUCT_ID GROUP BY P.PRODUCT_NAME ORDER BY SUM(QUANTITY)) A GROUP
+ BY PRODUCT_NAME) B WHERE MQTY = (SELECT MAX(QTY) FROM (SELECT P.PRODUCT_NAME, SUM(QUANTITY) QTY FROM PRODUCTS P INNER JOIN order_details o ON P.PRODUCT_ID = O.PRODUCT_ID GROUP BY P.PRODUCT_NAME ORDER BY SUM(QUANTITY)) A);
+
